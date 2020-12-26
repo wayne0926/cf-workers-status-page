@@ -1,23 +1,23 @@
 settings:
-  title: 'Status Page'
+  title: '状态检查'
   url: 'https://status-page.eidam.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: false # experimental feature, enable only for <5 monitors or on paid plans
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有的系统都在运作'
+  notAllmonitorsOperational: '并非所有的系统都在运作'
+  monitorLabelOperational: '运作'
+  monitorLabelNotOperational: '没有运作'
+  monitorLabelNoData: '无数据'
+  dayInHistogramNoData: '无数据'
+  dayInHistogramOperational: '一切完好'
+  dayInHistogramNotOperational: ' 事件' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: wr0926.ml
-    description: 'You write code. They handle the rest.' # default=empty
+  - id: wr0926-ml # unique identifier
+    name: Wr0926.Ml
+    description: '时过境迁Wayne博客' # default=empty
     url: 'https://wr0926.ml/' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
@@ -25,13 +25,19 @@ monitors:
 
   - id: www-cloudflare-com
     name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
+    description: '专为连接到Internet的任何内容而构建。'
     url: 'https://www.cloudflare.com'
     method: GET
     expectStatus: 200
 
-  - id: blog-cloudflare-com
-    name: The Cloudflare Blog
-    url: 'https://blog.cloudflare.com/'
+  - id: github-com
+    name: GitHub
+    url: 'https://github.com/'
+    method: GET
+    expectStatus: 200
+    
+- id: wayne0926-avosapps-us
+    name: 网站评论系统
+    url: 'https://wayne0926.avosapps.us'
     method: GET
     expectStatus: 200
