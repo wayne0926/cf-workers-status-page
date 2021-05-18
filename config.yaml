@@ -41,3 +41,9 @@ monitors:
     url: 'https://google.com'
     method: GET
     expectStatus: 200
+  
+  - id: euserv
+    name: euserv
+    url: 'http://srv19571.blue.kundencontroller.de'
+    method: GET
+    expectStatus: 200
