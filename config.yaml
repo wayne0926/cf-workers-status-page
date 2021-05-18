@@ -44,6 +44,12 @@ monitors:
   
   - id: euserv
     name: euserv
-    url: 'srv19571.blue.kundencontroller.de'
-    method: PING
+    url: 'https://admin.wr0926.ga'
+    method: GET
+    expectStatus: 200
+
+  - id: kod
+    name: 可道云
+    url: 'https://kod.wr0926.ml'
+    method: GET
     expectStatus: 200
