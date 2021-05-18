@@ -44,6 +44,6 @@ monitors:
   
   - id: euserv
     name: euserv
-    url: 'http://srv19571.blue.kundencontroller.de'
-    method: GET
+    url: 'srv19571.blue.kundencontroller.de'
+    method: PING
     expectStatus: 200
