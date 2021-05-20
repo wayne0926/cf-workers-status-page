@@ -3,6 +3,13 @@ import { useEffect, useState } from 'react'
 
 const kvDataKey = 'monitors_data_v1_1'
 
+export const locations = {
+  WAW: 'Warsaw',
+  SCL: 'Santiago de Chile',
+  MEL: 'Melbourne',
+  SIN: 'Singapore',
+}
+
 export async function getKVMonitors() {
   // trying both to see performance difference
   return KV_STATUS_PAGE.get(kvDataKey, 'json')
@@ -80,6 +87,30 @@ export async function notifyTelegram(monitor, operational) {
   return fetch(telegramUrl, {
     body: payload,
     method: 'POST',
+  })
+}
+
+// Visualize your payload using https://leovoel.github.io/embed-visualizer/
+export async function notifyDiscord(monitor, operational) {
+  const payload = {
+    username: `${config.settings.title}`,
+    avatar_url: `${config.settings.url}/${config.settings.logo}`,
+    embeds: [
+      {
+        title: `${monitor.name} is ${getOperationalLabel(operational)} ${
+          operational ? ':white_check_mark:' : ':x:'
+        }`,
+        description: `\`${monitor.method ? monitor.method : 'GET'} ${
+          monitor.url
+        }\` - :eyes: [Status Page](${config.settings.url})`,
+        color: operational ? 3581519 : 13632027,
+      },
+    ],
+  }
+  return fetch(SECRET_DISCORD_WEBHOOK_URL, {
+    body: JSON.stringify(payload),
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
   })
 }
 
