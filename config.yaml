@@ -59,4 +59,4 @@ monitors:
     name: v2u1
     url: 'http://tp.wr0926.ga'
     method: GET
-    expectStatus: 200
+    expectStatus: 404
