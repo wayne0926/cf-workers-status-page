@@ -60,3 +60,9 @@ monitors:
     url: 'http://tp.wr0926.ga'
     method: GET
     expectStatus: 404
+
+  - id: cr
+    name: 云
+    url: 'https://cr.wr0926.ml'
+    method: GET
+    expectStatus: 200
