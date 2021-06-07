@@ -36,9 +36,9 @@ monitors:
     method: GET
     expectStatus: 200
     
-  - id: wayne0926-avosapps-us
-    name: 网站评论系统（暂停）
-    url: 'https://google.com'
+  - id: oauth
+    name: 网站评论系统
+    url: 'https://oauth.wr0926.ml'
     method: GET
     expectStatus: 200
   
